@@ -31,10 +31,10 @@ const Employee = () => {
             const matchingEmployee = employees?.find(
                 emp => emp.name === user.name
             );
-            const response = await axios.get(`${EMPLOYEE_ENDPOINT}/get-employees`, { withCredentials: true });
+            const response = await axios.get(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/get-employees`, { withCredentials: true });
             // const response = user && user.role === 'Admin'
-            //     ? await axios.get(`${ATTENDANCE_ENDPOINT}/get-employees`, { withCredentials: true })
-            //     : await axios.get(`${EMPLOYEE_ENDPOINT}/get-employee/${matchingEmployee?._id}`, { withCredentials: true });
+            //     ? await axios.get(`${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/get-employees`, { withCredentials: true })
+            //     : await axios.get(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/get-employee/${matchingEmployee?._id}`, { withCredentials: true });
             // console.log(response.data);
             // console.log(response.data.success);
             if (response.data.success) {

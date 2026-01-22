@@ -43,7 +43,7 @@ const EmployeeTable = () => {
 
     const refreshPage = async () => {
         try {
-            const response = await axios.get(`${EMPLOYEE_ENDPOINT}/get-employees`, { withCredentials: true });
+            const response = await axios.get(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/get-employees`, { withCredentials: true });
             // console.log(response.data);
             // console.log(response.data.success);
             if (response.data.success) {
@@ -60,7 +60,7 @@ const EmployeeTable = () => {
     const deleteEmployeeHandler = async (id) => {
         console.log(`clicked for delete`)
         try {
-            const response = await axios.delete(`${EMPLOYEE_ENDPOINT}/delete-employee/${id}`, { withCredentials: true });
+            const response = await axios.delete(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/delete-employee/${id}`, { withCredentials: true });
             // console.log(response.data);
             // console.log(response.data.success);
             if (response.data.success) {

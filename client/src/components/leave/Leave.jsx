@@ -40,10 +40,10 @@ const Leave = () => {
                 console.warn('No matching employee record found for logged-in user');
                 return;
             }
-            // const response = await axios.get(`${LEAVE_ENDPOINT}/get-leave-requests/${matchingEmployee._id}`, { withCredentials: true });
+            // const response = await axios.get(`${import.meta.env.VITE_LEAVE_ENDPOINT}/get-leave-requests/${matchingEmployee._id}`, { withCredentials: true });
             const response = user && (user.role === 'Admin' || user.role === 'HR')
-                ? await axios.get(`${LEAVE_ENDPOINT}/get-leave-request-for-admin`, { withCredentials: true })
-                : await axios.get(`${LEAVE_ENDPOINT}/get-leave-requests/${matchingEmployee._id}`, { withCredentials: true });
+                ? await axios.get(`${import.meta.env.VITE_LEAVE_ENDPOINT}/get-leave-request-for-admin`, { withCredentials: true })
+                : await axios.get(`${import.meta.env.VITE_LEAVE_ENDPOINT}/get-leave-requests/${matchingEmployee._id}`, { withCredentials: true });
             // console.log(response.data);
             // console.log('leave data found');
             // console.log(response.data.success);

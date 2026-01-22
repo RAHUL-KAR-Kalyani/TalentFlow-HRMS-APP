@@ -39,7 +39,7 @@ const LeaveTable = () => {
 
     const updateLeaveHandler = async (leaveId, newStatus) => {
         try {
-            const response = await axios.patch(`${LEAVE_ENDPOINT}/update-leave-request/${leaveId}`, { status: newStatus }, { withCredentials: true });
+            const response = await axios.patch(`${import.meta.env.VITE_LEAVE_ENDPOINT}/update-leave-request/${leaveId}`, { status: newStatus }, { withCredentials: true });
             if (response.data.success) {
                 toast.success(response.data.message, 'Leave status updated successfully');
                 // console.log(response.data.updatedLeaveRequest)

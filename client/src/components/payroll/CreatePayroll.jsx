@@ -62,7 +62,7 @@ const CreatePayroll = () => {
                 year: input.year
             };
 
-            const response = await axios.post(`${PAYROLL_ENDPOINT}/generate`, payload, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_PAYROLL_ENDPOINT}/generate`, payload, { withCredentials: true });
             if (response.data.success) {
                 // server returns created payroll in response.data.payroll
                 dispatch(addPayroll(response.data.payroll));

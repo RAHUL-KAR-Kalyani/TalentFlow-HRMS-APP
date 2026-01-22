@@ -61,7 +61,7 @@ const AddLeave = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post(`${LEAVE_ENDPOINT}/request-leave`, input, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_LEAVE_ENDPOINT}/request-leave`, input, { withCredentials: true });
             console.log(response.data);
             console.log(response.data.success);
             console.log(response.data.leaveRequest);

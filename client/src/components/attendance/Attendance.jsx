@@ -37,8 +37,8 @@ const Attendance = () => {
                 return;
             }
             const response = user && (user.role === 'Admin' || user.role === 'HR')
-                ? await axios.get(`${ATTENDANCE_ENDPOINT}/get-attendance-for-admin-hr`, { withCredentials: true })
-                : await axios.get(`${ATTENDANCE_ENDPOINT}/get-attendance-by-employee/${matchingEmployee._id}`, { withCredentials: true });
+                ? await axios.get(`${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/get-attendance-for-admin-hr`, { withCredentials: true })
+                : await axios.get(`${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/get-attendance-by-employee/${matchingEmployee._id}`, { withCredentials: true });
             // console.log(response.data);
             // console.log('attendance data found');
             // console.log(response.data.success);

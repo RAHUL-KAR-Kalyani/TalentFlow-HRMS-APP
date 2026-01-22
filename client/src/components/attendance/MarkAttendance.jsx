@@ -70,7 +70,7 @@ const MarkAttendance = () => {
         e.preventDefault();
         setloading(true);
         try {
-            const response = await axios.post(`${ATTENDANCE_ENDPOINT}/mark-attendance`, input, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/mark-attendance`, input, { withCredentials: true });
             console.log(response.data);
             console.log(response.data.success);
             console.log(response.data.employee);

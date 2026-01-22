@@ -37,7 +37,7 @@ const AddEmployee = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post(`${EMPLOYEE_ENDPOINT}/register`, input, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/register`, input, { withCredentials: true });
             console.log(response.data);
             console.log(response.data.success);
             console.log(response.data.employee);

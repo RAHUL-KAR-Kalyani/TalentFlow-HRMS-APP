@@ -55,11 +55,11 @@ const Payroll = () => {
                     return;
                 }
 
-                response = await axios.get(`${PAYROLL_ENDPOINT}/get-payroll/${matchingEmployee._id}`, { withCredentials: true });
+                response = await axios.get(`${import.meta.env.VITE_PAYROLL_ENDPOINT}/get-payroll/${matchingEmployee._id}`, { withCredentials: true });
                 // console.log(response.data, 'payroll data found for employee');
 
             } else {
-                response = await axios.get(`${PAYROLL_ENDPOINT}/get-payroll`, { withCredentials: true });
+                response = await axios.get(`${import.meta.env.VITE_PAYROLL_ENDPOINT}/get-payroll`, { withCredentials: true });
                 // console.log(response.data, 'payroll data found for admin/hr');
             }
 

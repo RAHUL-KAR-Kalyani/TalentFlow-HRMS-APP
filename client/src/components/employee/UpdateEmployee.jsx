@@ -55,7 +55,7 @@ const UpdateEmployee = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.patch(`${EMPLOYEE_ENDPOINT}/update-employee/${id}`, input, { withCredentials: true });
+            const response = await axios.patch(`${import.meta.env.VITE_EMPLOYEE_ENDPOINT}/update-employee/${id}`, input, { withCredentials: true });
             console.log(response.data);
             console.log(response.data.success);
             console.log(response.data.employee);
