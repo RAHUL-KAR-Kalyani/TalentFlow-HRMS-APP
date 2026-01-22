@@ -1,0 +1,21 @@
+* {
+    user-select: none;
+}
+
+@media print {
+    body {
+        background: #f6f3f4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    @page {
+        width: auto;
+        min-height: auto;
+        margin: 0 0;
+    }
+
+    * {
+        page-break-inside: avoid;
+    }
+}
