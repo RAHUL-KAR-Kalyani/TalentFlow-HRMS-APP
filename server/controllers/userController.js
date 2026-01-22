@@ -138,7 +138,7 @@ const loginController = async (req, res) => {
         // }
 
 
-        return res.status(200).cookie('token', token, { maxAge: 1 * 24 * 60 * 62 * 1000, httpPnly: true, samesite: 'strict' }).json({
+        return res.status(200).cookie('token', token, { maxAge: 1 * 24 * 60 * 62 * 1000, httpOnly: true,secure: true, sameSite: 'none' }).json({
             message: `Welcome ${user.name} !`,
             success: true,
             user,
