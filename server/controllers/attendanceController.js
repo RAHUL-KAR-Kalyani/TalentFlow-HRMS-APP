@@ -27,18 +27,6 @@ const markAttendanceController = async (req, res) => {
             });
         }
 
-        // if (req.user._id.toString() !== employee.toString()) {
-        //     return res.status(403).json({
-        //         message: "You can mark only your own attendance",
-        //         success: false
-        //     });
-        // }
-
-        // // Normalize date (important)
-        // const attendanceDate = new Date(date);
-        // attendanceDate.setHours(0, 0, 0, 0);
-
-
         const exists = await attendanceModel.findOne({ employee, date });
 
         if (exists) {
