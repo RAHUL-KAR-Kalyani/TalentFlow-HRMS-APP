@@ -23,10 +23,10 @@ function startAutoAbsentJob() {
                 console.log(`Checking attendance for ${emp.name} on ${today.toDateString()}`);
                 console.log(`Marked Absent for ${emp.name}`);
             }
-            console.log("✅ Auto-absent marking done for", today.toDateString());
+            console.log("Auto-absent marking done for", today.toDateString());
             
         } catch (err) {
-            console.error("❌ Error in auto-absent job:", err);
+            console.error("Error in auto-absent job:", err);
         }
     });
 }
