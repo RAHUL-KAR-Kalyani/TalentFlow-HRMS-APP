@@ -113,7 +113,7 @@ const ViewPayroll = () => {
                     </div>
                     <div className="flex justify-between">
                         <span>Present Days</span>
-                        <span>{selectedPayroll?.totalDays}</span>
+                        <span>{selectedPayroll?.totalPresentDays}</span>
                     </div>
                     <div className="flex justify-between">
                         <span>Leave & Absent Days</span>
