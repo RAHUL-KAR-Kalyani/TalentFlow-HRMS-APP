@@ -52,6 +52,7 @@ const PayrollTable = () => {
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Id</th>
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Employee Name</th>
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Month</th>
+						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Year</th>
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Gross Salary</th>
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>allowances</th>
 						<th className='px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Deductions</th>
@@ -67,6 +68,7 @@ const PayrollTable = () => {
 								<td className='px-4 py-2 text-sm text-gray-700'>{payrollItem?.employee?.name}</td>
 								{/* <td className='px-4 py-2 text-sm text-gray-700'>{months[payrollItem?.month - 1]}</td> */}
 								<td className='px-4 py-2 text-sm text-gray-700'>{getMonthName(payrollItem?.month)}</td>
+								<td className='px-4 py-2 text-sm text-gray-700'>{payrollItem?.year}</td>
 								<td className='px-4 py-2 text-sm text-gray-700'>{payrollItem?.baseSalary}</td>
 								<td className='px-4 py-2 text-sm text-gray-700'>{payrollItem?.allowances}</td>
 								<td className='px-4 py-2 text-sm text-gray-700'>{payrollItem?.deductions}</td>
