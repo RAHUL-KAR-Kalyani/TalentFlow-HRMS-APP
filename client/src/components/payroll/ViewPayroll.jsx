@@ -100,7 +100,7 @@ const ViewPayroll = () => {
                             </div>
                             <div className="flex justify-between font-semibold">
                                 <span>Total Deductions</span>
-                                <span>{selectedPayroll?.deductions}</span>
+                                <span>{selectedPayroll?.absentDays}</span>
                             </div>
                         </div>
                     </div>
