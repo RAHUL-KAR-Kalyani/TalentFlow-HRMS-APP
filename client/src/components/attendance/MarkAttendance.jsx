@@ -28,20 +28,11 @@ const MarkAttendance = () => {
         console.log(loggedInEmployee, 'loggedInEmployee');
     }
 
-
-    // const [input, setInput] = useState({
-    //     employee: empid,
-    //     name: user.name,
-    //     email: loggedInEmployee.email,
-    //     date: new Date().toISOString().split('T')[0],
-    //     status: ""
-    // });
-
     const [input, setInput] = useState({
         employee: "",
         name: "",
         email: "",
-        date: new Date().toISOString().split('T')[0],
+        date: new Date().toLocaleDateString('en-CA'),
         status: ""
     });
 
