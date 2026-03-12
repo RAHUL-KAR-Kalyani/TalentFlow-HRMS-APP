@@ -68,7 +68,7 @@ const Employee = () => {
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                     <input type="text" className='p-2 outline-none' placeholder='Search Employee' onChange={(e) => setInput(e.target.value)} />
-                    <button onClick={() => navigate('/employees/add-employee')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>add new employee</button>
+                    <button onClick={() => navigate('/employees/add-employee')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>Add Employee</button>
 
                     <button onClick={() => refreshPage()} className='flex items-center bg-gray-700 text-white text-center p-2 gap-3 hover:cursor-pointer'>
                         <RefreshCcw size={20} className={`cursor-pointer transition-transform ${spinning ? "animate-spin" : ""}`} onClick={handleClick} />

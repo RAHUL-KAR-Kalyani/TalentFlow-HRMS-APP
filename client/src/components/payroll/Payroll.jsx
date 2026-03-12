@@ -91,7 +91,7 @@ const Payroll = () => {
                 {user.role !== 'Employee' ?
                     <div className="flex items-center gap-3">
                         <input type="text" className='p-2 outline-none' placeholder='Search By Name' onChange={(e) => setInput(e.target.value)} />
-                        <button onClick={() => navigate('/payroll/generate-payroll')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>Create Payroll Record</button>
+                        <button onClick={() => navigate('/payroll/generate-payroll')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>Generate Payroll</button>
 
                         <button onClick={() => refreshPage(dispatch)} className='flex items-center bg-gray-700 text-white text-center p-2 gap-3 hover:cursor-pointer'>
                             <RefreshCcw size={20} className={`cursor-pointer transition-transform ${spinning ? "animate-spin" : ""}`} onClick={handleClick} />
