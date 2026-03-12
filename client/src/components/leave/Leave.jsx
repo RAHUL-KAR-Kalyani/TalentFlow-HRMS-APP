@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import LeaveTable from './LeaveTable'
 import { useDispatch, useSelector } from 'react-redux';
 import { LEAVE_ENDPOINT } from '../../utils/constant';
-import { setLeaveRequests } from '../../redux/leaveSlice';
+import { setLeaveRequests, setSearchLeaveByName } from '../../redux/leaveSlice';
 import { useNavigate } from 'react-router-dom';
 import useGetAllLeave from '../../hooks/useGetAllLeave';
 import { RefreshCcw } from 'lucide-react';
@@ -24,6 +24,9 @@ const Leave = () => {
 
     const [spinning, setSpinning] = useState(false);
 
+    useEffect(() => {
+        dispatch(setSearchLeaveByName(input))
+    }, [input])
 
     const handleClick = () => {
         setSpinning(true);

@@ -4,9 +4,8 @@ import PayrollTable from './PayrollTable'
 import { RefreshCcw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PAYROLL_ENDPOINT } from '../../utils/constant';
-import { setPayroll } from '../../redux/payrollSlice';
+import { setPayroll, setSearchPayrollByName } from '../../redux/payrollSlice';
 import useGetAllPayroll from '../../hooks/useGetAllPayroll';
-import { setSearchPayrollByName } from '../../redux/payrollSlice';
 import axios from 'axios';
 import { toast } from 'sonner';
 
