@@ -71,7 +71,7 @@ const Attendance = () => {
         <div className='min-w-60'>
             <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">
-                    <input type="text" className='p-2 outline-none' placeholder='Search By Name' onChange={(e) => setInput(e.target.value)} />
+                    <input type="text" className='p-2 outline-none border-2 border-gray-200 bg-white' placeholder='Search By Name' onChange={(e) => setInput(e.target.value)} />
                     <button onClick={() => navigate('/attendance/mark-attendance')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>Mark Attendance</button>
 
                     <button onClick={() => refreshPage(dispatch)} className='flex items-center bg-gray-700 text-white text-center p-2 gap-3 hover:cursor-pointer'>

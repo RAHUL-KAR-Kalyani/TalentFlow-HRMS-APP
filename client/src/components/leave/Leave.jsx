@@ -19,7 +19,8 @@ const Leave = () => {
     const { leaveRequest } = useSelector((store) => store.leave);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState('');
+    const [input, setInput] = useState('');
 
     const [spinning, setSpinning] = useState(false);
 
@@ -77,7 +78,7 @@ const Leave = () => {
         <div className='min-w-60'>
             <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">
-                    <input type="text" className='p-2 outline-none' placeholder='Search Employee leave' onChange={(e) => setInput(e.target.value)} />
+                    <input type="text" className='p-2 outline-none border-2 border-gray-200 bg-white' placeholder='Search Leave' onChange={(e) => setInput(e.target.value)} />
                     <button onClick={() => navigate('/leave/request-leave')} className='bg-gray-700 text-white text-center p-2 hover:cursor-pointer'>Request Leave</button>
 
                     <button onClick={() => refreshPage()} className='flex items-center bg-gray-700 text-white text-center p-2 gap-3 hover:cursor-pointer'>
