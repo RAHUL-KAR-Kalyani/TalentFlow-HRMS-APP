@@ -46,7 +46,6 @@ const Login = () => {
             // console.log("API response", res.data);
             if (res.data.success) {
                 dispatch(setUser(res.data.user));
-                console.log("navigating...")
                 if (user?.role === "Employee") {
                     navigate('/home');
                 } else {
