@@ -8,7 +8,10 @@ const createEmployeeSchema = z.object({
     role: z.enum(["admin", "hr", "employee"]).optional(),
     employment_type: z.enum(["Permanent", "Intern"]),
     joiningDate: z.string().optional(),
-    salary: z.string().optional().transform(val => (val ? Number(val) : undefined))
+    salary: z.preprocess(
+        (val) => (val !== "" && val !== undefined ? Number(val) : undefined),
+        z.number().optional()
+    )
 });
 
 const updateEmployeeSchema = z.object({
@@ -19,7 +22,10 @@ const updateEmployeeSchema = z.object({
     role: z.enum(["admin", "hr", "employee"]).optional(),
     employment_type: z.enum(["Permanent", "Intern"]).optional(),
     joiningDate: z.string().optional(),
-    salary: z.string().optional().transform(val => (val ? Number(val) : undefined))
+    salary: z.preprocess(
+        (val) => (val !== "" && val !== undefined ? Number(val) : undefined),
+        z.number().optional()
+    )
 })
 
 module.exports = { createEmployeeSchema, updateEmployeeSchema }

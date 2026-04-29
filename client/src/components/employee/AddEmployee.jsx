@@ -12,7 +12,6 @@ const AddEmployee = () => {
     }, []);
 
     const [loading, setLoading] = useState(false);
-    // const [message, setMessage] = useState('');
     const { user } = useSelector((store) => store.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -45,7 +44,6 @@ const AddEmployee = () => {
                 dispatch(addEmployee(response.data.employee));
                 navigate('/employees');
                 toast.success(response.data.message);
-                // setMessage(response.data.message);
             }
         } catch (error) {
             console.log(error)
@@ -60,12 +58,6 @@ const AddEmployee = () => {
                 <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
                     Add New Employee
                 </h2>
-
-                {/* {message && (
-                    <p className="text-center mb-4 text-green-600 font-medium animate-pulse">
-                        {message}
-                    </p>
-                )} */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <input type="text" name="id" value={input.id} onChange={changeEventHandler} placeholder="Employee ID" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />

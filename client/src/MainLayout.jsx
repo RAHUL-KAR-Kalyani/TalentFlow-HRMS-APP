@@ -26,7 +26,7 @@ const MainLayout = () => {
             <div className="flex">
                 <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-                <div className="pt-18 w-full transition-all md:ml-70">
+                <div className="pt-18 w-full transition-all md:ml-64">
                     <Outlet />
                 </div>
             </div>

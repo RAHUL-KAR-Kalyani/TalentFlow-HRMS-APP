@@ -6,9 +6,7 @@ import AdminDashboard from '../../pages/AdminDashboard';
 const Home = () => {
     const { employees } = useSelector(store => store.employee);
     const { user } = useSelector((store) => store.auth);
-
-    // console.log(user, 'user');
-    // console.log(employees, 'employees');
+    
     const role = user?.role?.toLowerCase();
     return (
         <div>

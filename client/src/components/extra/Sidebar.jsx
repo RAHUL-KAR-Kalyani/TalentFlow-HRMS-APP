@@ -44,10 +44,6 @@ const Sidebar = ({ open, setOpen }) => {
                 md:translate-x-0
             `}
         >
-            {/* Logo */}
-           
-
-            {/* Menu */}
             <nav className="px-3 py-6 space-y-2">
                 {menuItems.map((item) => {
                     const isActive = location.pathname === item.path
@@ -67,7 +63,6 @@ const Sidebar = ({ open, setOpen }) => {
                                 }
                             `}
                         >
-                            {/* Active indicator */}
                             {isActive && (
                                 <span className="absolute left-0 top-2 bottom-2 w-1 bg-indigo-500 rounded-r-full"></span>
                             )}
