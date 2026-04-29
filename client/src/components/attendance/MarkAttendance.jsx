@@ -19,13 +19,13 @@ const MarkAttendance = () => {
     const loggedInEmployee = employees.find(emp => emp.email === user.email);
 
     const empid = loggedInEmployee?._id;
-    console.log(empid, 'empid of logged in employee');
+    // console.log(empid, 'empid of logged in employee');
 
-    console.log(employees.map(emp => emp.email), 'all emails of empoyeees')
+    // console.log(employees.map(emp => emp.email), 'all emails of empoyeees')
     if (!loggedInEmployee) {
-        console.error('No employee found with the given email:', user.email);
+        // console.error('No employee found with the given email:', user.email);
     } else {
-        console.log(loggedInEmployee, 'loggedInEmployee');
+        // console.log(loggedInEmployee, 'loggedInEmployee');
     }
 
     const [input, setInput] = useState({
@@ -62,9 +62,9 @@ const MarkAttendance = () => {
         setloading(true);
         try {
             const response = await axios.post(`${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/mark-attendance`, input, { withCredentials: true });
-            console.log(response.data);
-            console.log(response.data.success);
-            console.log(response.data.employee);
+            // console.log(response.data);
+            // console.log(response.data.success);
+            // console.log(response.data.employee);
             if (response.data.success) {
                 dispatch(addAttendance(response.data.employee));
                 navigate('/attendance');

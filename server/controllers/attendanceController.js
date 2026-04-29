@@ -16,18 +16,18 @@ const markAttendanceController = async (req, res) => {
 
         const { employee, date, status } = req.body;
 
-        const missingFields = [];
-        if (!employee) missingFields.push("employee");
-        if (!date) missingFields.push("date");
-        if (!status) missingFields.push("status");
+        // const missingFields = [];
+        // if (!employee) missingFields.push("employee");
+        // if (!date) missingFields.push("date");
+        // if (!status) missingFields.push("status");
 
-        if (missingFields.length > 0) {
-            return res.status(400).json({
-                success: false,
-                message: `Missing fields: ${missingFields.join(", ")}`,
-                missingFields
-            });
-        }
+        // if (missingFields.length > 0) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: `Missing fields: ${missingFields.join(", ")}`,
+        //         missingFields
+        //     });
+        // }
 
         if (status !== "Present" && status !== "Leave") {
             return res.status(400).json({
@@ -67,12 +67,10 @@ const getAttendanceController = async (req, res) => {
         });
 
     } catch (error) {
-
         return res.status(404).json({
             success: false,
             message: error.message
         });
-
     }
 };
 

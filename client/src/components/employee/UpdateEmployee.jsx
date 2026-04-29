@@ -98,7 +98,10 @@ const UpdateEmployee = () => {
                     <input type="text" name="role" value={input.role} onChange={changeEventHandler} placeholder="Employee Role" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
                     <input type="text" name="designation" value={input.designation} onChange={changeEventHandler} placeholder="Employee Designation" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
 
-                    <input type="number" name="salary" value={input.salary} onChange={changeEventHandler} placeholder="Employee Salary" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    {/* <input type="number" name="salary" value={input.salary} onChange={changeEventHandler} placeholder="Employee Salary" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required /> */}
+                </div>
+                <div className="grid mb-4">
+                    <input type="number" name="salary" value={input.salary} onChange={changeEventHandler} placeholder="Employee Salary" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />                    
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">

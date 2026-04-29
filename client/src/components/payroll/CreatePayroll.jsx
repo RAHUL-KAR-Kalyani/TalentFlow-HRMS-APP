@@ -48,11 +48,7 @@ const CreatePayroll = () => {
     }
 
     const submitHandler = async (e) => {
-        e.preventDefault();
-        if (!input.employeeId || !input.month || !input.year) {
-            toast.error('Please select employee, month and year');
-            return;
-        }
+        e.preventDefault();       
 
         setLoading(true);
         try {
@@ -92,7 +88,7 @@ const CreatePayroll = () => {
                         ))}
                     </select>
 
-                    <select name="month" value={input.month} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-700" required>
+                    <select name="month" value={input.month} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-700" >
                         <option value="">Select Month</option>
                         {months.map(m => (
                             <option key={m.value} value={m.value}>{m.label}</option>

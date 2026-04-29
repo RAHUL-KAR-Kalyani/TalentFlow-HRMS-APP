@@ -57,76 +57,107 @@ const Navbar = ({ toggleSidebar }) => {
     };
 
     return (
-        <div className="navbar bg-white shadow-sm z-50 fixed top-0 left-0 w-full print:hidden flex items-center px-5">
+        <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white border-b border-gray-200/50">
 
-            {/* Sidebar Toggle Button */}
-            <button onClick={toggleSidebar} className="p-2 mr-4 rounded-md bg-gray-100 md:hidden">
-                <Menu size={24} />
-            </button>
+            <div className="flex items-center justify-between px-6 h-16">
 
-            {/* IMT Logo */}
-            {/* <div className="flex-1">
-                <Link to="/" className="text-xl font-semibold text-slate-900 hover:text-gray-500">
-                    HMS
-                </Link>
-            </div> */}
-            
-            <div className="flex items-center m-0 p-0 leading-none">
-                <Link to="/">
-                    <img className="block m-0 p-0 max-h-10 max-w-45 object-contain" src={LOGO} alt="Logo" />
-                </Link>
-            </div>
+                {/* Left Section */}
+                <div className="flex items-center gap-4">
 
-            {/* User/Login Section */}
-            <div className="flex-none mr-5 ">
-                {!user && (
-                    <ul className="flex gap-4 items-center">
-                        <li>
-                            <Link to="/login" className="text-slate-900 hover:text-gray-500">
+                    {/* Sidebar Toggle */}
+                    <button
+                        onClick={toggleSidebar}
+                        className="p-2 rounded-lg hover:bg-gray-100 transition md:hidden"
+                    >
+                        <Menu size={22} />
+                    </button>
+
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center">
+                        <img
+                            className="h-9 object-contain"
+                            src={LOGO}
+                            alt="Logo"
+                        />
+                    </Link>
+                </div>
+
+                {/* Right Section */}
+                <div className="flex items-center gap-4">
+                    {/* If NOT logged in */}
+                    {!user && (
+                        <>
+                            <Link
+                                to="/login"
+                                className="text-gray-700 hover:text-black transition"
+                            >
                                 Login
                             </Link>
-                        </li>
-                        <li>
-                            <Link to="/signup" className="text-slate-900 hover:text-gray-500">
-                                Signup
+
+                            <Link to="/signup" className="px-4 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-600 text-white hover:opacity-90 transition shadow-sm">
+                                Sign up
                             </Link>
-                        </li>
-                    </ul>
-                )}
-            </div>
+                        </>
+                    )}
 
-            {user && (
-                <div className="flex gap-2 mr-8 items-center ms-auto">
-                    {/* Avatar and Dropdown */}
-                    <div className="relative">
-                        <button ref={avatarButtonRef} onClick={toggleDropdown} className="w-10 h-10 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center focus:outline-none cursor-pointer">
-                            <img src={userAvatar} alt="User Avatar" className="w-full h-full rounded-full object-cover" />
-                        </button>
+                    {/* If logged in */}
+                    {user && (
+                        <div className="relative">
 
-                        {isDropdownOpen && (
-                            <div ref={dropdownRef} className="absolute right-0 mt-3 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
-                                <ul className="py-2">
-                                    {/* <li>
-                                        <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>
-                                            Profile
-                                        </Link>
-                                    </li> */}
-                                    <li>
-                                        <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" onClick={() => setIsDropdownOpen(false)}>
-                                            Settings
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link onClick={handleLogout} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                                            Logout
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        )}
-                    </div>
+                            {/* Avatar */}
+                            <button
+                                ref={avatarButtonRef}
+                                onClick={toggleDropdown}
+                                className="w-10 h-10 rounded-full overflow-hidden 
+                        border border-gray-300 hover:ring-2 hover:ring-indigo-400 
+                        transition"
+                            >
+                                <img src={userAvatar} alt="User" className="w-full h-full object-cover" />
+                            </button>
+
+                            {/* Dropdown */}
+                            {isDropdownOpen && (
+                                <div
+                                    ref={dropdownRef}
+                                    className="absolute right-0 mt-3 w-52 
+                            bg-white/90 backdrop-blur-xl 
+                            border border-gray-200 rounded-xl 
+                            shadow-[0_10px_30px_rgba(0,0,0,0.15)] 
+                            overflow-hidden"
+                                >
+                                    <div className="px-4 py-3 border-b text-sm text-gray-600">
+                                        Signed in as <br />
+                                        <span className="font-medium text-gray-900">
+                                            {user?.email}
+                                        </span>
+                                    </div>
+
+                                    <ul className="py-2 text-sm">
+                                        <li>
+                                            <Link
+                                                to="/profile"
+                                                onClick={() => setIsDropdownOpen(false)}
+                                                className="block px-4 py-2 hover:bg-gray-100 transition"
+                                            >
+                                                Settings
+                                            </Link>
+                                        </li>
+
+                                        <li>
+                                            <button
+                                                onClick={handleLogout}
+                                                className="w-full text-left px-4 py-2 hover:bg-red-50 text-red-600 transition"
+                                            >
+                                                Logout
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 };

@@ -3,13 +3,16 @@ const { registerService, loginService, profileService } = require("../services/u
 const registerController = async (req, res) => {
     try {
         const { name, email, password, role } = req.body;
-        if (!name || !email || !password || !role) {
-            return res.status(400).json({
-                success: false,
-                message: "All fields are required"
-            });
-        }
+
+        // if (!name || !email || !password || !role) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: "All fields are required"
+        //     });
+        // }
+
         await registerService({ name, email, password, role });
+
         return res.status(201).json({
             success: true,
             message: "User registered successfully"
@@ -28,12 +31,14 @@ const registerController = async (req, res) => {
 const loginController = async (req, res) => {
     try {
         const { email, password, role } = req.body;
-        if (!email || !password || !role) {
-            return res.status(400).json({
-                success: false,
-                message: "All fields are required"
-            });
-        }
+
+        // if (!email || !password || !role) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: "All fields are required"
+        //     });
+        // }
+
         const { user, token } = await loginService({
             email,
             password,
@@ -62,7 +67,9 @@ const loginController = async (req, res) => {
 const profileController = async (req, res) => {
     try {
         const userId = req.body.userId;
+
         const userProfile = await profileService(userId);
+
         return res.status(200).json({
             success: true,
             message: "Profile retrieved",

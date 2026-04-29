@@ -14,12 +14,12 @@ const addEmployeeController = async (req, res) => {
 
         const { name, email, department, designation, role, employment_type, joiningDate, salary } = req.body;
 
-        if (!name || !email || !department || !designation || !role || !employment_type) {
-            return res.status(400).json({
-                success: false,
-                message: "All fields are required"
-            });
-        }
+        // if (!name || !email || !department || !designation || !role || !employment_type) {
+        //     return res.status(400).json({
+        //         success: false,
+        //         message: "All fields are required"
+        //     });
+        // }
 
         const employee = await addEmployeeService({
             name,

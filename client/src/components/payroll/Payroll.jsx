@@ -34,7 +34,7 @@ const Payroll = () => {
     const handleClick = () => {
         setSpinning(true);
         setTimeout(() => setSpinning(false), 1000);
-        console.log('not spinning now');
+        // console.log('not spinning now');
     };
 
     const refreshPage = async () => {

@@ -1,14 +1,37 @@
 const mongoose = require("mongoose");
 const attendanceModel = require("../models/attendanceModel");
 
+// const markAttendanceService = async ({ employee, date, status }) => {
+
+//     const exists = await attendanceModel.findOne({ employee, date });
+//     if (exists) {
+//         throw new Error("Attendance already marked");
+//     }
+
+//     const newAttendance = await attendanceModel.create({ employee, date: new Date(date), status });
+//     return newAttendance;
+// };
+
+
 const markAttendanceService = async ({ employee, date, status }) => {
 
-    const exists = await attendanceModel.findOne({ employee, date });
+    const parsedDate = new Date(date);
+
+    const exists = await attendanceModel.findOne({ 
+        employee, 
+        date: parsedDate 
+    });
+
     if (exists) {
         throw new Error("Attendance already marked");
     }
 
-    const newAttendance = await attendanceModel.create({ employee, date: new Date(date), status });
+    const newAttendance = await attendanceModel.create({ 
+        employee, 
+        date: parsedDate, 
+        status 
+    });
+
     return newAttendance;
 };
 

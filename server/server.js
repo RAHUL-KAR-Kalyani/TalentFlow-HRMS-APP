@@ -25,7 +25,6 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
 app.use(cors(corsOption));
 
 

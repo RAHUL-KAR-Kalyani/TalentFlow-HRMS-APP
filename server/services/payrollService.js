@@ -36,13 +36,13 @@ const monthMap = {
 
 const generatePayrollService = async ({ employeeId, month, year }) => {
 
-    month = monthMap[month];
-    month = parseInt(month);
-    year = parseInt(year);
+    // month = monthMap[month];
+    // month = parseInt(month);
+    // year = parseInt(year);
 
-    if (!month || !year || isNaN(month) || isNaN(year)) {
-        throw new Error("Invalid month/year");
-    }
+    // if (!month || !year || isNaN(month) || isNaN(year)) {
+    //     throw new Error("Invalid month/year");
+    // }
 
     const employee = await employeeModel.findById(employeeId);
 

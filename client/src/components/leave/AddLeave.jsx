@@ -62,9 +62,9 @@ const AddLeave = () => {
         setLoading(true);
         try {
             const response = await axios.post(`${import.meta.env.VITE_LEAVE_ENDPOINT}/request-leave`, input, { withCredentials: true });
-            console.log(response.data);
-            console.log(response.data.success);
-            console.log(response.data.leaveRequest);
+            // console.log(response.data);
+            // console.log(response.data.success);
+            // console.log(response.data.leaveRequest);
             if (response.data.success) {
                 dispatch(setLeaveRequests(response.data.leaveRequest));
                 navigate('/leave');
@@ -94,10 +94,10 @@ const AddLeave = () => {
                         <input type="email" name="email" value={input.email} readOnly placeholder="Employee Email" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition" required />
                     </div>
                     <div className="w-full sm:grid-cols-2 gap-4 mb-4">
-                        <input type="date" value={input.startDate} name="startDate" onChange={handleChange} placeholder="Start Date" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition" required />
+                        <input type="date" value={input.startDate} name="startDate" onChange={handleChange} placeholder="Start Date" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition"  />
                     </div>
                     <div className="w-full sm:grid-cols-2 gap-4 mb-4">
-                        <input type="date" value={input.endDate} name="endDate" onChange={handleChange} placeholder="End Date" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition" required />
+                        <input type="date" value={input.endDate} name="endDate" onChange={handleChange} placeholder="End Date" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition"  />
                     </div>
                     <div className='w-full sm:grid-cols-2 gap-4 mb-4'>
                         <select name='type' onChange={handleChange} className='w-full p-4 border border-gray-300 rounded-lg focus:outline-none transition'>

@@ -69,18 +69,18 @@ const AddEmployee = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <input type="text" name="id" value={input.id} onChange={changeEventHandler} placeholder="Employee ID" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
-                    <input type="text" name="name" value={input.name} onChange={changeEventHandler} placeholder="Employee Name" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    <input type="text" name="name" value={input.name} onChange={changeEventHandler} placeholder="Employee Name" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <input type="email" name="email" value={input.email} onChange={changeEventHandler} placeholder="Employee Email" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
-                    <input type="text" name="department" value={input.department} onChange={changeEventHandler} placeholder="Employee Department" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    <input type="email" name="email" value={input.email} onChange={changeEventHandler} placeholder="Employee Email" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"  />
+                    <input type="text" name="department" value={input.department} onChange={changeEventHandler} placeholder="Employee Department" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"  />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <input type="text" name="designation" value={input.designation} onChange={changeEventHandler} placeholder="Employee Designation" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    <input type="text" name="designation" value={input.designation} onChange={changeEventHandler} placeholder="Employee Designation" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"  />
                     {/* <input type="text" name="role" value={input.role} onChange={changeEventHandler} placeholder="Employee Role" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required /> */}
-                    <select name="role" value={input.role} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-500" required>
+                    <select name="role" value={input.role} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-500">
                         <option value="">Select Role</option>
                         <option value="admin" disabled>Admin</option>
                         <option value="hr">HR</option>
@@ -91,11 +91,11 @@ const AddEmployee = () => {
                 </div>
 
                 <div className="grid mb-4">
-                    <input type="number" name="salary" value={input.salary} onChange={changeEventHandler} placeholder="Employee Salary" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required />
+                    <input type="number" name="salary" value={input.salary} onChange={changeEventHandler} placeholder="Employee Salary" className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"  />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <select name="employmentType" value={input.employment_type} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-500" required >
+                    <select name="employment_type" value={input.employment_type} onChange={changeEventHandler} className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-gray-500"  >
                         <option>
                             Select Employment Type
                         </option>
@@ -107,7 +107,7 @@ const AddEmployee = () => {
 
                 <div className="mt-6">
                     <button type="submit" className="w-full bg-linear-to-r from-indigo-500 to-purple-500 text-white font-semibold py-3 rounded-lg shadow-md hover:from-purple-500 hover:to-indigo-500 transition duration-300">
-                        {loading ? "Please wait..." : "Add Employee"}
+                        {"Add Employee"}
                     </button>
                 </div>
             </form>
