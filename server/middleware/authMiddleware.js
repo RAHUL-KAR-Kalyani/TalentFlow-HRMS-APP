@@ -31,6 +31,8 @@ const isAuth = async (req, res, next) => {
 
         req.user = user;
         next();
+        console.log("Cookies:", req.cookies);
+console.log("Token:", req.cookies.token);
     } catch (error) {
         console.log(error);
         return res.status(500).json({
