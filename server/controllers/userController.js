@@ -87,9 +87,19 @@ const profileController = async (req, res) => {
 
 const logoutController = async (req, res) => {
     try {
-        return res.status(200).cookie("token", "", { maxAge: 0 }).json({
+        // return res.status(200).cookie("token", "", { maxAge: 0 }).json({
+        //     message: "Logged out successfully",
+        //     success: true
+        // });
+         res.clearCookie("token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+        });
+
+        return res.status(200).json({
+            success: true,
             message: "Logged out successfully",
-            success: true
         });
 
     } catch (error) {
