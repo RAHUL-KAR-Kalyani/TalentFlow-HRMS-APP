@@ -28,11 +28,12 @@ const isAuth = async (req, res, next) => {
                 success: false
             });
         }
+        console.log("SECRET_KEY exists:", !!process.env.SECRET_KEY);
+        console.log("Cookies:", req.cookies);
+        console.log("Token:", req.cookies.token);
 
         req.user = user;
         next();
-        console.log("Cookies:", req.cookies);
-console.log("Token:", req.cookies.token);
     } catch (error) {
         console.log(error);
         return res.status(500).json({
