@@ -98,6 +98,7 @@ Create `.env` files in the `server/` and `client/` directories. Replace placehol
 - MONGO_URI=your_mongo_uri_here
 - JWT_SECRET=your_jwt_secret_here
 - CLIENT_URL=your_frontend_url
+- GOOGLE_CLIENT_ID=your_google_client_url
 
 (Place additional optional vars such as SMTP credentials or cron timezone if needed.)
 
@@ -108,6 +109,7 @@ Create `.env` files in the `server/` and `client/` directories. Replace placehol
 - VITE_EMPLOYEE_ENDPOINT=backend_employee_endpoint
 - VITE_LEAVE_ENDPOINT=backend_leave_endpoint
 - VITE_PAYROLL_ENDPOINT=backend_payroll_endpoint
+- VITE_GOOGLE_CLIENT_ID=your_google_client_url
 
 📌 Notes:
 - Vite requires client env variables to start with `VITE_`.
