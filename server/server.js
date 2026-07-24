@@ -31,7 +31,7 @@ app.use(cors(corsOption));
 // Routes
 app.get('/', (req, res) => {
     return res.send({
-        message: 'Welcome to the QuickBite API',
+        message: 'Welcome to the TalentFlow-HRMS API',
         success: true
     });
 });

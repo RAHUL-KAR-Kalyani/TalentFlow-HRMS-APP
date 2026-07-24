@@ -92,11 +92,16 @@
 
 Create `.env` files in the `server/` and `client/` directories. Replace placeholder values before running the app.
 
+#### Folder — .env
+- MONGO_URI=your_mongo_uri_here
+- SECRET_KEY=your_jwt_secret_here
+
+
 #### Backend — server/.env
 
 - PORT=your_port_number
 - MONGO_URI=your_mongo_uri_here
-- JWT_SECRET=your_jwt_secret_here
+- SECRET_KEY=your_jwt_secret_here
 - CLIENT_URL=your_frontend_url
 - GOOGLE_CLIENT_ID=your_google_client_url
 

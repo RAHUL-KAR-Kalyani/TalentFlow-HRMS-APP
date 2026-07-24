@@ -24,8 +24,8 @@ services:
             - mongo
 
         environment:
-            MONGO_URI: mongodb+srv://rahul:rahulkar@authapp.v96x4ah.mongodb.net/hr-management
-            JWT_SECRET: "this is auth app"
+            MONGO_URI: ${MONGO_URI}
+            JWT_SECRET: ${SECRET_KEY}
 
         volumes:
             - ./server:/app
