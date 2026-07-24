@@ -151,19 +151,19 @@ const AttendanceTable = () => {
                                 records.map(attendance => (
                                     <tr key={attendance?._id} className='hover:bg-gray-50'>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
-                                            {attendance?.employee?._id || 'employee left'}
+                                            {attendance?.employee?._id || 'Employee Left'}
                                         </td>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
-                                            {attendance?.employee?.name || 'employee left'}
+                                            {attendance?.employee?.name || 'Employee Left'}
                                         </td>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
-                                            {attendance?.employee?.email || 'employee left'}
+                                            {attendance?.employee?.email || 'Employee Left'}
                                         </td>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
-                                            {attendance?.employee?.department || 'employee left'}
+                                            {attendance?.employee?.department || 'Employee Left'}
                                         </td>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
-                                            {attendance?.employee?.designation || 'employee left'}
+                                            {attendance?.employee?.designation || 'Employee Left'}
                                         </td>
                                         <td className='px-4 py-2 text-sm text-gray-700'>
                                             {new Date(attendance?.date).toLocaleDateString('en-GB')}

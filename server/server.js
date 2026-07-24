@@ -2,7 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser')
 const userRouter = require('./routes/userRouter');
-const cors=require('cors');
+const cors = require('cors');
 const employeeRouter = require('./routes/employeeRouter');
 const attendanceRouter = require('./routes/attendanceRouter');
 const leaveRequestRouter = require('./routes/leaveRequestRouter');
@@ -14,9 +14,9 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT;
-const corsOption={
-    origin:process.env.FRONTEND_URL,
-    credentials:true
+const corsOption = {
+    origin: process.env.FRONTEND_URL,
+    credentials: true
 }
 
 
@@ -30,7 +30,10 @@ app.use(cors(corsOption));
 
 // Routes
 app.get('/', (req, res) => {
-    return res.send('Server is running...........');
+    return res.send({
+        message: 'Welcome to the QuickBite API',
+        success: true
+    });
 });
 
 app.use('/user', userRouter);

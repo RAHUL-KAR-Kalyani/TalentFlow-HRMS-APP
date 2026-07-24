@@ -63,22 +63,14 @@ const Navbar = ({ toggleSidebar }) => {
 
                 {/* Left Section */}
                 <div className="flex items-center gap-4">
-
                     {/* Sidebar Toggle */}
-                    <button
-                        onClick={toggleSidebar}
-                        className="p-2 rounded-lg hover:bg-gray-100 transition md:hidden"
-                    >
+                    <button onClick={toggleSidebar} className="p-2 rounded-lg hover:bg-gray-100 transition md:hidden">
                         <Menu size={22} />
                     </button>
 
                     {/* Logo */}
                     <Link to="/" className="flex items-center">
-                        <img
-                            className="h-9 object-contain"
-                            src={LOGO}
-                            alt="Logo"
-                        />
+                        <img className="h-9 object-contain" src="/mainLogo.png" alt="Logo" />
                     </Link>
                 </div>
 
@@ -87,10 +79,7 @@ const Navbar = ({ toggleSidebar }) => {
                     {/* If NOT logged in */}
                     {!user && (
                         <>
-                            <Link
-                                to="/login"
-                                className="text-gray-700 hover:text-black transition"
-                            >
+                            <Link to="/login" className="text-gray-700 hover:text-black transition">
                                 Login
                             </Link>
 
@@ -105,26 +94,13 @@ const Navbar = ({ toggleSidebar }) => {
                         <div className="relative">
 
                             {/* Avatar */}
-                            <button
-                                ref={avatarButtonRef}
-                                onClick={toggleDropdown}
-                                className="w-10 h-10 rounded-full overflow-hidden 
-                        border border-gray-300 hover:ring-2 hover:ring-indigo-400 
-                        transition"
-                            >
-                                <img src={userAvatar} alt="User" className="w-full h-full object-cover" />
+                            <button ref={avatarButtonRef} onClick={toggleDropdown} className="w-10 h-10 rounded-full overflow-hidden  border border-gray-300 hover:ring-2 hover:ring-indigo-400  transition">
+                                <img src="/userAvatar.png" alt="User" className="w-full h-full object-cover" />
                             </button>
 
                             {/* Dropdown */}
                             {isDropdownOpen && (
-                                <div
-                                    ref={dropdownRef}
-                                    className="absolute right-0 mt-3 w-52 
-                            bg-white/90 backdrop-blur-xl 
-                            border border-gray-200 rounded-xl 
-                            shadow-[0_10px_30px_rgba(0,0,0,0.15)] 
-                            overflow-hidden"
-                                >
+                                <div ref={dropdownRef} className="absolute right-0 mt-3 w-52 bg-white/90 backdrop-blur-xl border border-gray-200 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
                                     <div className="px-4 py-3 border-b text-sm text-gray-600">
                                         Signed in as <br />
                                         <span className="font-medium text-gray-900">
@@ -134,20 +110,13 @@ const Navbar = ({ toggleSidebar }) => {
 
                                     <ul className="py-2 text-sm">
                                         <li>
-                                            <Link
-                                                to="/profile"
-                                                onClick={() => setIsDropdownOpen(false)}
-                                                className="block px-4 py-2 hover:bg-gray-100 transition"
-                                            >
+                                            <Link to="/profile" onClick={() => setIsDropdownOpen(false)} className="block px-4 py-2 hover:bg-gray-100 transition">
                                                 Settings
                                             </Link>
                                         </li>
 
                                         <li>
-                                            <button
-                                                onClick={handleLogout}
-                                                className="w-full text-left px-4 py-2 hover:bg-red-50 text-red-600 transition"
-                                            >
+                                            <button onClick={handleLogout} className="w-full text-left px-4 py-2 hover:bg-red-50 text-red-600 transition">
                                                 Logout
                                             </button>
                                         </li>

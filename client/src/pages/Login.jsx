@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { setLoading, setUser } from '../redux/authSlice';
 import { toast } from 'sonner';
 import { useForm } from "react-hook-form";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
 
@@ -44,6 +45,43 @@ const Login = () => {
                 toast.success(res.data.message);
             }
         } catch (error) {
+            toast.error(error.response?.data?.message);
+            console.error("Login error:", error.response?.data?.message);
+        } finally {
+            dispatch(setLoading(false));
+        }
+    };
+
+    const googleLoginHandler = async (credentialResponse) => {
+        try {
+            if (!role) {
+                return toast.error("Please select a role first.");
+            }
+
+            dispatch(setLoading(true));
+
+            const res = await axios.post(
+                `${import.meta.env.VITE_USER_ENDPOINT}/google-login`,
+                {
+                    credential: credentialResponse.credential,
+                    role: role
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    withCredentials: true
+                }
+            );
+
+            if (res.data.success) {
+                dispatch(setUser(res.data.user));
+                toast.success(res.data.message);
+                navigate("/");
+            }
+
+        } catch (error) {
+            console.log(error);
             toast.error(error.response?.data?.message);
         } finally {
             dispatch(setLoading(false));
@@ -94,6 +132,10 @@ const Login = () => {
                     className="w-full py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition duration-200">
                     {loading ? "Please wait..." : "Login"}
                 </button>
+
+                <div className="my-4 flex justify-center">
+                    <GoogleLogin onSuccess={googleLoginHandler} onError={() => { toast.error("Google Login Failed") }} />
+                </div>
 
                 {/* Signup */}
                 <p className="text-center text-sm text-white mt-4">

@@ -1,4 +1,30 @@
-const { registerService, loginService, profileService } = require("../services/userService");
+const { googleLoginService, registerService, loginService, profileService } = require("../services/userService");
+
+const googleLoginController = async (req, res) => {
+    try {
+
+        const { credential, role } = req.body;
+
+        const { user, token } = await googleLoginService({ credential, role });
+
+        return res.status(200).cookie("token", token,
+            { httpOnly: true, secure: true, sameSite: "none", maxAge: 24 * 60 * 60 * 1000 }).json({
+                success: true,
+                message: `Welcome ${user.name}!`,
+                token,
+                user
+            });
+
+    } catch (error) {
+
+        return res.status(400).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+};
+
 
 const registerController = async (req, res) => {
     try {
@@ -91,7 +117,7 @@ const logoutController = async (req, res) => {
         //     message: "Logged out successfully",
         //     success: true
         // });
-         res.clearCookie("token", {
+        res.clearCookie("token", {
             httpOnly: true,
             secure: true,
             sameSite: "none",
@@ -112,5 +138,4 @@ const logoutController = async (req, res) => {
 
 
 
-
-module.exports = { registerController, loginController, profileController, logoutController };
+module.exports = { googleLoginController, registerController, loginController, profileController, logoutController };
