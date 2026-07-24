@@ -1,9 +1,8 @@
-version: "3.9"
+# version: "3.9"
 
 services:
     mongo:
         image: mongo:latest
-        container_name: mongo
 
         restart: always
 
@@ -16,8 +15,6 @@ services:
     server:
         build: ./server
 
-        container_name: backend
-
         restart: always
 
         ports:
@@ -27,7 +24,7 @@ services:
             - mongo
 
         environment:
-            MONGO_URI: mongodb+srv://rahul:rahulkar@authapp.v96x4ah.mongodb.net/inventory-billing
+            MONGO_URI: mongodb+srv://rahul:rahulkar@authapp.v96x4ah.mongodb.net/hr-management
             JWT_SECRET: "this is auth app"
 
         volumes:
@@ -36,8 +33,6 @@ services:
 
     client:
         build: ./client
-
-        container_name: frontend
 
         restart: always
 

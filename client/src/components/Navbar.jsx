@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import userAvatar from '../../public/userAvatar.png'
-import LOGO from '../../public/mainLogo.png'
+// import userAvatar from '../../public/userAvatar.png'
+// import LOGO from '../../public/mainLogo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
