@@ -52,6 +52,10 @@
 
 #### 📥 Clone the repository and open the project folder.
 
+Install dependencies:
+
+  npm install
+
 ##### 🔙 Backend
 
 - Change to the server directory:
