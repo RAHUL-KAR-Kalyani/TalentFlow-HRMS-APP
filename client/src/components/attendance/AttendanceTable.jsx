@@ -3,7 +3,6 @@ import { toast } from 'sonner';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { ATTENDANCE_ENDPOINT } from '../../utils/constant';
 import { setAttendance, updateAttendance } from '../../redux/attendanceSlice';
 
 
@@ -68,7 +67,7 @@ const AttendanceTable = () => {
     const updateAttendanceHandler = async (attendanceId, newStatus) => {
         try {
             const response = await axios.patch(
-                `${ATTENDANCE_ENDPOINT}/update-attendance/${attendanceId}`,
+                `${import.meta.env.VITE_ATTENDANCE_ENDPOINT}/update-attendance/${attendanceId}`,
                 { status: newStatus },
                 { withCredentials: true }
             );
