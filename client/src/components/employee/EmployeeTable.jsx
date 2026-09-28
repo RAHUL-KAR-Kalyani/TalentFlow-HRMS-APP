@@ -92,7 +92,7 @@ const EmployeeTable = () => {
                     {filterEmployee?.map((employee) => (
                         <tr key={employee._id} className='hover:bg-gray-100 transition-colors'>
                             <td className='px-4 py-2 capitalize whitespace-nowrap text-sm text-gray-700'>{employee?.name}</td>
-                            <td className='px-4 py-2 capitalize whitespace-nowrap text-sm text-gray-700'>{employee?.email}</td>
+                            <td className='px-4 py-2 whitespace-nowrap text-sm text-gray-700'>{employee?.email}</td>
                             <td className='px-4 py-2 capitalize whitespace-nowrap text-sm text-gray-700'>{employee?.department}</td>
                             <td className='px-4 py-2 capitalize whitespace-nowrap text-sm text-gray-700'>{employee.designation}</td>
                             <td className={`px-4 py-2 ${employee?.role?.toLowerCase() === 'hr' ? 'uppercase' : 'capitalize'} whitespace-nowrap text-sm text-gray-700`}>{employee?.role}</td>
