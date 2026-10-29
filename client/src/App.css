@@ -15,6 +15,10 @@
         margin: 0 0;
     }
 
+    .no-print {
+        display: none !important;
+    }
+
     * {
         page-break-inside: avoid;
     }
